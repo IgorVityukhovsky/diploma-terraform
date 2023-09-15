@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-nginx
+spec:
+  rules:
+  - host: diploma-netology-igorv.site
+    http:
+      paths:
+      - path: /index.html
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: my-app-service
+            port:
+              number: 8099
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: stable-grafana
+            port:
+              number: 80
+  - host: j.diploma-netology-igorv.site
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: jenkins-service
+            port:
+              number: 8888
+  ingressClassName: nginx

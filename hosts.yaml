@@ -1,0 +1,35 @@
+all:
+  hosts:
+    node1:
+      ansible_host: 192.168.10.5
+      ansible_user: igor
+      ip: 192.168.10.5
+      access_ip: 192.168.10.5
+    node2:
+      ansible_host: 192.168.20.31
+      ansible_user: igor
+      ip: 192.168.20.31
+      access_ip: 192.168.20.31
+    node3:
+      ansible_host: 192.168.30.22
+      ansible_user: igor
+      ip: 192.168.30.22
+      access_ip: 192.168.30.22
+  children:
+    kube_control_plane:
+      hosts:
+        node1:
+    kube_node:
+      hosts:
+        node2:
+        node3:
+    etcd:
+      hosts:
+        node1:
+    k8s_cluster:
+      children:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+      hosts: {}
+
