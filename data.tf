@@ -26,7 +26,7 @@ resource "null_resource" "hosts" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = "${var.TF_VAR_KEY_PRIVATE}"
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
@@ -50,7 +50,7 @@ resource "null_resource" "pre-script" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = "${var.TF_VAR_KEY_PRIVATE}"
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
@@ -61,7 +61,7 @@ resource "null_resource" "pre-script" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = "${var.TF_VAR_KEY_PRIVATE}"
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
@@ -71,7 +71,7 @@ resource "null_resource" "pre-script" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = "${var.TF_VAR_KEY_PRIVATE}"
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
@@ -81,7 +81,7 @@ resource "null_resource" "pre-script" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = "${var.TF_VAR_KEY_PRIVATE}"
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
@@ -91,7 +91,7 @@ resource "null_resource" "pre-script" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = "${var.TF_VAR_KEY_PRIVATE}"
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
@@ -101,7 +101,7 @@ resource "null_resource" "pre-script" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = "${var.TF_VAR_KEY_PRIVATE}"
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
@@ -111,7 +111,7 @@ resource "null_resource" "pre-script" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = "${var.TF_VAR_KEY_PRIVATE}"
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
@@ -122,7 +122,7 @@ resource "null_resource" "pre-script" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = "${var.TF_VAR_KEY_PRIVATE}"
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
