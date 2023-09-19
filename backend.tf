@@ -1,3 +1,8 @@
+variable "TF_VAR_KEY_S3" {
+  description = "key s3 (will be changed)"
+  default     = "will_be_changed"
+}
+
 terraform {
   backend "s3" {
       endpoint = "storage.yandexcloud.net"
