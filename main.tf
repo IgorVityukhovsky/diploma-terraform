@@ -28,7 +28,7 @@ resource "yandex_compute_instance" "kuber-1" {
   }
 
   metadata = {
-    user-data = "#cloud-config\nusers:\n  - name: ${var.username}\n    groups: sudo\n    shell: /bin/bash\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']\n    ssh-authorized-keys:\n      - ${key_pub}"
+    user-data = "#cloud-config\nusers:\n  - name: ${var.username}\n    groups: sudo\n    shell: /bin/bash\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']\n    ssh-authorized-keys:\n      - ${TF_VAR_KEY_PUB}"
   }
 
   provisioner "file" {
