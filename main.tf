@@ -8,7 +8,7 @@ variable "TF_VAR_KEY_PUB" {
   default     = "will_be_changed"
 }
 
-variable "TF_VAR_KEY_PRIVAT" {
+variable "TF_VAR_KEY_PRIVATE" {
   description = "private key SSH (will be changed)"
   default     = "will_be_changed"
 }
@@ -90,7 +90,7 @@ resource "yandex_compute_instance" "kuber-2" {
   }
 
   metadata = {
-    user-data = "#cloud-config\nusers:\n  - name: ${var.username}\n    groups: sudo\n    shell: /bin/bash\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']\n    ssh-authorized-keys:\n      - ${TF_VAR_KEY_PUP}"
+    user-data = "#cloud-config\nusers:\n  - name: ${var.username}\n    groups: sudo\n    shell: /bin/bash\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']\n    ssh-authorized-keys:\n      - ${TF_VAR_KEY_PUB}"
   }
 }
 
@@ -118,6 +118,6 @@ resource "yandex_compute_instance" "kuber-3" {
   }
 
   metadata = {
-    user-data = "#cloud-config\nusers:\n  - name: ${var.username}\n    groups: sudo\n    shell: /bin/bash\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']\n    ssh-authorized-keys:\n      - ${TF_VAR_KEY_PUP}"
+    user-data = "#cloud-config\nusers:\n  - name: ${var.username}\n    groups: sudo\n    shell: /bin/bash\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']\n    ssh-authorized-keys:\n      - ${TF_VAR_KEY_PUB}"
   }
 }
