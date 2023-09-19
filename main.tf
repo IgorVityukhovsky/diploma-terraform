@@ -23,11 +23,6 @@ variable "TF_VAR_KEY_JSON" {
   default     = "will_be_changed"
 }
 
-variable "TF_VAR_KEY_S3" {
-  description = "key s3 (will be changed)"
-  default     = "will_be_changed"
-}
-
 resource "yandex_compute_instance" "kuber-1" {
   name     = "kuber1"
   hostname = "kuber1"
