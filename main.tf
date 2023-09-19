@@ -50,29 +50,6 @@ resource "yandex_compute_instance" "kuber-1" {
   metadata = {
     user-data = "#cloud-config\nusers:\n  - name: ${var.username}\n    groups: sudo\n    shell: /bin/bash\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']\n    ssh-authorized-keys:\n      - ${var.TF_VAR_KEY_PUB}"
   }
-
-  provisioner "file" {
-    source      = "/home/igor/.ssh/yandex/ya_key"
-    destination = "/home/${var.username}/.ssh/id_rsa"
-    connection {
-      type        = "ssh"
-      user        = "${var.username}"
-      private_key = "${var.TF_VAR_KEY_PRIVATE}"
-      host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
-    }
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "chmod 600 /home/${var.username}/.ssh/id_rsa"
-    ]
-    connection {
-      type        = "ssh"
-      user        = "${var.username}"
-      private_key = "${var.TF_VAR_KEY_PRIVATE}"
-      host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
-    }
-  }
 }
 
 resource "yandex_compute_instance" "kuber-2" {
