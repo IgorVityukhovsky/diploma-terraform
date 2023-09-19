@@ -18,6 +18,11 @@ variable "TF_VAR_KEY_PRIVATE_JSON" {
   default     = "will_be_changed"
 }
 
+variable "TF_VAR_KEY_JSON" {
+  description = "private key provider (will be changed)"
+  default     = "will_be_changed"
+}
+
 resource "yandex_compute_instance" "kuber-1" {
   name     = "kuber1"
   hostname = "kuber1"
