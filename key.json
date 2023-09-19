@@ -4,5 +4,5 @@
    "created_at": "2023-07-12T08:23:16.409695945Z",
    "key_algorithm": "RSA_2048",
    "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtCoAX5S8Cck9aJB/LuRp\n/gXOnD45El3njWQ0sa0q2tRiWf8aCZp+9bv8DIAFLR1kawQ4/37XB0pezbFYSbs6\n2TvXT3diyZhG6pXKrffqCq0Nxi4JioFNeu60PHgbxHNWncZNk0tNqaMyZHV3bmWK\nnQuHQqY+/Z3sYztttC/M2R5Fhw3lLwUYXdV1jHBtD69+Cim7YTcH+UFW3tCAWWE2\n3xToDCKak9Z8OQ34Ti84uByIHSJE7LzXBZZscsKx2XhqjPNq2unbaTndP7vCNe3d\n7sEqY4i0uRoaF2HONgEM8ArDgB2W/nTWePfWFZKpvfsl2yjsaxLznwDnwhXASfoI\nRQIDAQAB\n-----END PUBLIC KEY-----\n",
-   "private_key": "тут мой приватный ключ"
+   "private_key": "${var.TF_VAR_KEY_PRIVATE}"
 }
