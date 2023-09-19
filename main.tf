@@ -8,6 +8,11 @@ variable "TF_VAR_KEY_PUB" {
   default     = "will_be_changed"
 }
 
+variable "TF_VAR_KEY_PRIVAT" {
+  description = "private key SSH (will be changed)"
+  default     = "will_be_changed"
+}
+
 resource "yandex_compute_instance" "kuber-1" {
   name     = "kuber1"
   hostname = "kuber1"
@@ -42,7 +47,7 @@ resource "yandex_compute_instance" "kuber-1" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = ${TF_VAR_KEY_PRIVATE}
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
@@ -54,7 +59,7 @@ resource "yandex_compute_instance" "kuber-1" {
     connection {
       type        = "ssh"
       user        = "${var.username}"
-      private_key = file("~/.ssh/yandex/ya_key")
+      private_key = TF_VAR_KEY_PRIVAT}
       host        = yandex_compute_instance.kuber-1.network_interface.0.nat_ip_address
     }
   }
