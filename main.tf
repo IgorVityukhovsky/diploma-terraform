@@ -108,3 +108,5 @@ resource "yandex_compute_instance" "kuber-3" {
     user-data = "#cloud-config\nusers:\n  - name: ${var.username}\n    groups: sudo\n    shell: /bin/bash\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']\n    ssh-authorized-keys:\n      - ${var.TF_VAR_KEY_PUB}"
   }
 }
+
+
