@@ -5,7 +5,7 @@ variable "username" {
 
 variable "TF_VAR_KEY_PUB" {
   description = "public key SSH"
-  default     = ${TF_VAR_KEY_PUB}
+  default     = {TF_VAR_KEY_PUB}
 }
 
 resource "yandex_compute_instance" "kuber-1" {
