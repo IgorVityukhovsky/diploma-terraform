@@ -3,7 +3,7 @@ variable "username" {
   default     = "igor"
 }
 
-variable "KEY_PUB" {
+variable "TF_VAR_KEY_PUB" {
   description = "public key SSH (will be changed)"
   default     = "will_be_changed"
 }
